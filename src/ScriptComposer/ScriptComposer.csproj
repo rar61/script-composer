@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <Version>0.1.0</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Buildalyzer" Version="2.5.1" />
+    <PackageReference Include="Buildalyzer.Workspaces" Version="2.5.1" />
+    <PackageReference Include="Microsoft.CodeAnalysis" Version="3.5.0" />
+    <PackageReference Include="TextCopy" Version="1.5.1" />
+    <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.20158.1" />
+  </ItemGroup>
+
+</Project>
