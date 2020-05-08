@@ -12,7 +12,7 @@ using Buildalyzer;
 using Buildalyzer.Workspaces;
 
 
-namespace SEScriptComposer
+namespace ScriptComposer
 {
     class Program
     {
@@ -111,7 +111,9 @@ namespace SEScriptComposer
 
             requiredNamespaces.IntersectWith(declaredNamespaces);
 
-            var requiredNodes = GetRequiredNamespaces(requiredNamespaces, declaredNamespaces, compilation).SelectMany
+            var requiredNodes = GetRequiredNamespaces(requiredNamespaces, declaredNamespaces, compilation)
+            .Distinct(SymbolEqualityComparer.Default)
+            .SelectMany
             (
                 ns => ns.DeclaringSyntaxReferences.Where
                 (
@@ -175,7 +177,7 @@ namespace SEScriptComposer
 
             childNamspaces.IntersectWith(declaredNamespaces);
             if (childNamspaces.Count == 0)
-                return Enumerable.Empty<INamespaceSymbol>();
+                return namespaces;
 
             return namespaces.Concat(GetRequiredNamespaces(childNamspaces, declaredNamespaces, compilation));
         }

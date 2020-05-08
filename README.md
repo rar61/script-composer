@@ -36,7 +36,7 @@ namespace Script.Main
 }
 ```
 
-File (or files in case of partial class) with root class will be scannd for `using statements`. Contents of used namespaces will be recursively added to final result as well as contents of root class.
+File (or files in case of partial class) with root class will be scanned for `using statements`. Contents of used namespaces will be recursively added to final result as well as contents of root class.
 
 ## Build instructions
 
